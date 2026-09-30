@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f6">
+  <meta name="description" content="EurekaBench measures AI agents' ability to discover scientific insights through experiments. Explore results across 26 tasks and six scientific domains.">
+  <meta property="og:title" content="EurekaBench">
+  <meta property="og:description" content="Measuring Agentic Ability to Discover New Scientific Insights">
+  <meta property="og:type" content="website">
+  <title>Contribute — EurekaBench</title>
+  <link rel="icon" href="assets/eurekabench-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="contribute.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="index.html" aria-label="EurekaBench home">EurekaBench<span class="wordmark-dot" aria-hidden="true"></span></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Leaderboard</a>
+        <span class="nav-link nav-link-unavailable" role="link" aria-disabled="true" title="Paper coming soon">Paper</span>
+        <a class="nav-link" id="github-link" href="https://github.com/EurekaBench" target="_blank" rel="noopener">Github<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
+        <a class="nav-link" href="team.html">Our Team</a>
+        <a class="nav-link active" href="contribute.html" aria-current="page">Contribute</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-width standalone-page">
+    <section class="contribute-section" id="contribute" aria-labelledby="contribute-title">
+      <h1 class="page-title" id="contribute-title">Contribute</h1>
+      <p class="contribute-intro">Help expand EurekaBench with new scientific problems or new insights into existing ones.</p>
+      <div class="contribution-kinds" role="group" aria-label="Contribution type">
+        <button type="button" data-contribution-kind="problem" aria-pressed="true">Propose a new problem</button>
+        <button type="button" data-contribution-kind="insight" aria-pressed="false">Contribute an insight</button>
+      </div>
+      <form id="contribution-form" class="contribution-form">
+        <input type="hidden" id="contribution-kind" name="kind" value="problem">
+        <div class="contribution-field"><label for="contribution-name">Your name</label><input id="contribution-name" name="name" autocomplete="name" required aria-required="true" maxlength="120"></div>
+        <div class="contribution-field"><label for="contribution-affiliation">Affiliation</label><input id="contribution-affiliation" name="affiliation" autocomplete="organization" required aria-required="true" maxlength="200"></div>
+        <div class="contribution-field"><label for="contribution-webpage">Personal webpage</label><input id="contribution-webpage" name="webpage" type="url" autocomplete="url" placeholder="https://" required aria-required="true" pattern="[Hh][Tt][Tt][Pp][Ss]?://.+" title="Enter a full http:// or https:// URL." maxlength="2000"></div>
+        <div class="contribution-field"><label for="contribution-title" id="contribution-title-label">Problem title</label><input id="contribution-title" name="title" required aria-required="true" maxlength="200"></div>
+        <div class="contribution-field" id="contribution-domain-field"><label for="contribution-domain">Domain</label><select id="contribution-domain" name="domain" required aria-required="true"><option value="" disabled selected>Select a domain</option><option value="Neuroscience">Neuroscience</option><option value="Computer science">Computer science</option><option value="Chemistry">Chemistry</option><option value="Astrophysics">Astrophysics</option><option value="Geophysics">Geophysics</option><option value="Plasma physics">Plasma physics</option><option value="Others">Others</option></select>
+          <div class="contribution-custom-domain" id="contribution-domain-other-field" hidden><label for="contribution-domain-other">Specify domain</label><input id="contribution-domain-other" name="domain_other" disabled aria-required="false" maxlength="200"></div>
+        </div>
+        <div class="contribution-field" id="contribution-reference-field" hidden><label for="contribution-reference" id="contribution-reference-label">Existing problem ID</label><input id="contribution-reference" name="reference" disabled aria-required="false" aria-describedby="contribution-reference-help" maxlength="200"><p class="field-help" id="contribution-reference-help">Identify the EurekaBench problem that this insight addresses.</p></div>
+        <div class="contribution-field"><label for="contribution-evidence">Supporting links <span class="optional">(optional)</span></label><input id="contribution-evidence" name="evidence" type="text" aria-describedby="contribution-evidence-help" maxlength="2000"><p class="field-help" id="contribution-evidence-help">Papers, datasets, code, or experimental results.</p></div>
+        <div class="contribution-field contribution-field-wide"><label for="contribution-description" id="contribution-description-label">Describe the scientific problem</label><textarea id="contribution-description" name="description" rows="4" required aria-required="true" aria-describedby="contribution-description-help" maxlength="10000"></textarea><p class="field-help" id="contribution-description-help">Outline the question, available data or experiments, and how a solution could be evaluated.</p></div>
+        <div class="contribution-actions"><button type="submit" class="contribution-submit">Open email draft <span aria-hidden="true">↗</span></button><button type="button" id="copy-contribution" class="contribution-copy">Copy draft</button><p>Draft addressed to <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p></div>
+        <p id="contribution-status" class="contribution-status" role="status" aria-live="polite"></p>
+        <textarea id="contribution-draft" class="contribution-draft" readonly hidden aria-label="Contribution email draft" rows="8"></textarea>
+      </form>
+      <noscript><p class="contribution-noscript">Email your problem or insight, with supporting evidence, to <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p><style>.contribution-form,.contribution-kinds{display:none}</style></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><span>EurekaBench <span aria-hidden="true">·</span> 2026</span><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

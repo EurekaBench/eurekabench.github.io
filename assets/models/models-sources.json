@@ -1,0 +1,30 @@
+[
+  {
+    "family": "claude",
+    "sourcePage": "https://claude.com/",
+    "assetUrl": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png",
+    "localFile": "assets/models/claude.png",
+    "notes": "Official family/company icon; no version-specific model mark is claimed. Original artwork and colors preserved."
+  },
+  {
+    "family": "openai",
+    "sourcePage": "https://github.com/openai/openai-cookbook",
+    "assetUrl": "https://raw.githubusercontent.com/openai/openai-cookbook/main/examples/agents_sdk/deployment_manager/frontend/src/openai-logomark.svg",
+    "localFile": "assets/models/openai.svg",
+    "notes": "Official monochrome OpenAI blossom. Original SVG path preserved; black on transparent background. Replaces the blue developer-site favicon."
+  },
+  {
+    "family": "deepseek",
+    "sourcePage": "https://www.deepseek.com/",
+    "assetUrl": "https://www.deepseek.com/favicon.ico",
+    "localFile": "assets/models/deepseek.png",
+    "notes": "Official family/company icon; no version-specific model mark is claimed. Original ICO retained; converted losslessly to PNG for SVG image compatibility."
+  },
+  {
+    "family": "kimi",
+    "sourcePage": "https://www.kimi.com/",
+    "assetUrl": "https://www.kimi.com/pwa-192.png",
+    "localFile": "assets/models/kimi.png",
+    "notes": "Official family/company icon; no version-specific model mark is claimed. Original artwork and colors preserved."
+  }
+]

@@ -1,0 +1,9 @@
+# Manuscripts and archives must not be published from this website repository.
+*.[pP][dD][fF]
+*.[tT][eE][xX]
+*.bib
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+.DS_Store
