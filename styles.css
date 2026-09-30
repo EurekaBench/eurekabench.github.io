@@ -43,15 +43,17 @@ nav { height: 100%; display: flex; align-items: center; gap: 32px; }
 .nav-link:hover, .nav-link.active { color: var(--ink); }
 .nav-link.active::after { content: ""; position: absolute; bottom: -1px; height: 2px; background: var(--green); left: 0; right: 0; }
 .nav-link svg { width: 12px; height: 12px; color: var(--muted); }
-.hero { display: grid; grid-template-columns: 1fr 224px; align-items: center; gap: 44px; padding: 30px 0 26px; }
+.hero { padding: 30px 0 26px; }
+.hero-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.hero-heading h1 { margin: 0; padding: 0; min-height: 0; }
 h1 { font: 700 clamp(46px, 5vw, 64px)/1.12 var(--serif); letter-spacing: -1.5px; margin: 0 0 12px; }
 .paper-title { font: 400 24px/1.35 var(--serif); color: #424a43; }
 .benchmark-stats { display: flex; align-items: center; gap: 17px; margin-top: 20px; color: var(--muted); font-size: 13px; white-space: nowrap; }
 .benchmark-stats strong { font-size: 14px; font-weight: 700; color: var(--ink); margin-right: 3px; }
 .benchmark-stats i { height: 13px; width: 1px; background: var(--line); }
-.hero-art { position: relative; display: grid; place-items: center; width: 224px; height: 224px; }
-.logo-backdrop { position: absolute; width: 180px; height: 180px; border-radius: 50%; background: var(--warm); bottom: 6px; right: 15px; }
-.hero-art img { display: block; width: 224px; height: 224px; position: relative; z-index: 1; object-fit: contain; }
+.hero-art { position: relative; display: grid; place-items: center; flex: 0 0 auto; width: 88px; height: 88px; }
+.logo-backdrop { position: absolute; width: 70px; height: 70px; border-radius: 50%; background: var(--warm); bottom: 2px; right: 4px; }
+.hero-art img { display: block; width: 100%; height: 100%; position: relative; z-index: 1; object-fit: contain; }
 
 /* Results lead the page. Keep rows compact while giving the values readable type. */
 .leaderboard-section { padding-top: 20px; border-top: 1px solid var(--line); }
@@ -179,6 +181,11 @@ details[open] > summary svg { transform: rotate(45deg); }
 .contribute-section { margin-top: 30px; padding-top: 27px; border-top: 1px solid var(--line); }
 .contribute-section h2, .contact-section h2, .citation-section h2 { font-size: 29px; }
 .contribute-intro { font: 400 18px/1.6 var(--serif); color: #414b43; margin-top: 9px; }
+.contribution-contact { margin-top: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+.contribute-section .contribution-contact h2, .contribute-section .contribution-direct-title { font-size: 25px; }
+.contribution-contact p, .contribution-direct-intro { max-width: 760px; margin-top: 9px; font: 400 18px/1.6 var(--serif); color: #414b43; }
+.standalone-page .contribution-contact .contact-email { margin-top: 12px; }
+.contribution-direct-title { margin-top: 25px; }
 .contribution-kinds { display: flex; gap: 26px; margin-top: 15px; border-bottom: 1px solid var(--line); }
 .contribution-kinds button { padding: 10px 0; background: transparent; font-size: 16px; line-height: 1.4; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .contribution-kinds button[aria-pressed="true"] { color: var(--green); border-bottom-color: var(--green); font-weight: 600; }
@@ -211,9 +218,7 @@ details[open] > summary svg { transform: rotate(45deg); }
 
 @media (max-width: 1100px) {
   .page-width, .header-inner { width: calc(100% - 56px); }
-  .hero { grid-template-columns: 1fr 195px; gap: 28px; padding-block: 27px; }
-  .hero-art, .hero-art img { width: 195px; height: 195px; }
-  .logo-backdrop { width: 158px; height: 158px; right: 12px; }
+  .hero { padding-block: 27px; }
   h1 { font-size: 54px; }
   .paper-title { font-size: 22px; }
 }
@@ -222,9 +227,6 @@ details[open] > summary svg { transform: rotate(45deg); }
   nav { gap: 22px; }
   .wordmark { font-size: 20px; }
   .nav-link { font-size: 13px; }
-  .hero { grid-template-columns: 1fr 160px; gap: 18px; }
-  .hero-art, .hero-art img { width: 160px; height: 160px; }
-  .logo-backdrop { width: 130px; height: 130px; right: 9px; bottom: 3px; }
   h1 { font-size: 48px; }
   .paper-title { font-size: 21px; }
   .benchmark-stats { font-size: 12px; gap: 12px; }
@@ -248,12 +250,11 @@ details[open] > summary svg { transform: rotate(45deg); }
   .wordmark { font-size: 20px; }
   nav { width: 100%; height: 43px; justify-content: space-between; gap: 0; max-width: 370px; }
   .nav-link { font-size: 13px; }
-  .hero { position: relative; display: block; padding: 26px 0 23px; }
-  .hero-copy { position: relative; z-index: 1; }
+  .hero { padding: 26px 0 23px; }
+  .hero-heading { gap: 10px; }
   h1 { font-size: clamp(36px, 8vw, 46px); letter-spacing: -1px; margin-bottom: 12px; padding-right: 73px; min-height: 40px; }
-  .hero-art { position: absolute; top: 12px; right: -4px; width: 76px; height: 76px; }
-  .hero-art img { width: 76px; height: 76px; }
-  .logo-backdrop { width: 64px; height: 64px; right: 4px; bottom: 0; }
+  .hero-art { width: 48px; height: 48px; }
+  .logo-backdrop { width: 40px; height: 40px; right: 2px; bottom: 0; }
   .paper-title { font-size: 20px; line-height: 1.35; }
   .benchmark-stats { margin-top: 17px; font-size: 11px; gap: 10px; }
   .benchmark-stats strong { font-size: 12px; margin-right: 1px; }
@@ -304,9 +305,6 @@ details[open] > summary svg { transform: rotate(45deg); }
   .benchmark-stats { font-size: 10px; gap: 7px; }
   .benchmark-stats strong { font-size: 11px; }
   h1 { font-size: 34px; }
-  .hero-art, .hero-art img { width: 65px; height: 65px; }
-  .hero-art { right: -5px; top: 15px; }
-  .logo-backdrop { width: 54px; height: 54px; }
   .paper-title { font-size: 18px; }
   .model-col { width: 176px; }
   #results-table { width: 955px; min-width: 955px; }

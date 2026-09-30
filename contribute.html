@@ -9,7 +9,7 @@
   <meta property="og:description" content="Measuring Agentic Ability to Discover New Scientific Insights">
   <meta property="og:type" content="website">
   <title>Contribute — EurekaBench</title>
-  <link rel="icon" href="assets/eurekabench-logo.png" type="image/png">
+  <link rel="icon" href="assets/eurekabench-logo.png?v=f74ff59933" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <script src="contribute.js" defer></script>
 </head>
@@ -32,12 +32,18 @@
   <main id="main" class="page-width standalone-page">
     <section class="contribute-section" id="contribute" aria-labelledby="contribute-title">
       <h1 class="page-title" id="contribute-title">Contribute</h1>
-      <p class="contribute-intro">Help expand EurekaBench with new scientific problems or new insights into existing ones.</p>
-      <div class="contribution-kinds" role="group" aria-label="Contribution type">
-        <button type="button" data-contribution-kind="problem" aria-pressed="true">Propose a new problem</button>
-        <button type="button" data-contribution-kind="insight" aria-pressed="false">Contribute an insight</button>
+      <section class="contribution-contact" aria-labelledby="conversation-title">
+        <h2 id="conversation-title">Start with a conversation</h2>
+        <p>Contact Jiayi Geng directly to discuss your idea. A few sentences about the scientific problem or insight you have in mind are enough to get started.</p>
+        <a class="contact-email" href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu <span aria-hidden="true">↗</span></a>
+      </section>
+      <h2 class="contribution-direct-title" id="direct-contribution-title">Ready to contribute?</h2>
+      <p class="contribution-direct-intro">Use the form below to propose a new scientific problem or contribute an insight into an existing one.</p>
+      <div class="contribution-kinds" role="group" aria-labelledby="direct-contribution-title">
+        <button type="button" data-contribution-kind="problem" aria-pressed="true" aria-controls="contribution-form">Propose a new problem</button>
+        <button type="button" data-contribution-kind="insight" aria-pressed="false" aria-controls="contribution-form">Contribute an insight</button>
       </div>
-      <form id="contribution-form" class="contribution-form">
+      <form id="contribution-form" class="contribution-form" aria-labelledby="direct-contribution-title">
         <input type="hidden" id="contribution-kind" name="kind" value="problem">
         <div class="contribution-field"><label for="contribution-name">Your name</label><input id="contribution-name" name="name" autocomplete="name" required aria-required="true" maxlength="120"></div>
         <div class="contribution-field"><label for="contribution-affiliation">Affiliation</label><input id="contribution-affiliation" name="affiliation" autocomplete="organization" required aria-required="true" maxlength="200"></div>
@@ -53,7 +59,7 @@
         <p id="contribution-status" class="contribution-status" role="status" aria-live="polite"></p>
         <textarea id="contribution-draft" class="contribution-draft" readonly hidden aria-label="Contribution email draft" rows="8"></textarea>
       </form>
-      <noscript><p class="contribution-noscript">Email your problem or insight, with supporting evidence, to <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p><style>.contribution-form,.contribution-kinds{display:none}</style></noscript>
+      <noscript><p class="contribution-noscript">Email your problem or insight, with supporting evidence, to <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p><style>.contribution-form,.contribution-kinds,.contribution-direct-intro{display:none}</style></noscript>
     </section>
   </main>
 
