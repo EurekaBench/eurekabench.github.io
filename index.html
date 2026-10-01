@@ -9,11 +9,11 @@
   <meta property="og:description" content="Measuring Agentic Ability to Discover New Scientific Insights">
   <meta property="og:type" content="website">
   <title>EurekaBench — Scientific Discovery Benchmark</title>
-  <link rel="icon" href="assets/eurekabench-logo.png?v=f74ff59933" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=logo-left">
+  <link rel="icon" href="assets/eurekabench-logo.png?v=dc452d8769" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=final-score-conditional">
   <link rel="stylesheet" href="scatter.css">
-  <script src="app.js" defer></script>
-  <script src="scatter.js" defer></script>
+  <script src="app.js?v=final-score-conditional" defer></script>
+  <script src="scatter.js?v=final-score-conditional" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,8 +35,8 @@
     <section class="hero" aria-labelledby="site-title">
       <div class="hero-copy">
         <div class="hero-heading">
-          <div class="hero-art"><div class="logo-backdrop" aria-hidden="true"></div><img src="assets/eurekabench-logo.png?v=f74ff59933" alt="EurekaBench's border collie scientist, wearing glasses and a lab coat" width="1254" height="1254" fetchpriority="high"></div>
           <h1 id="site-title">EurekaBench</h1>
+          <div class="hero-art"><img src="assets/eurekabench-logo.png?v=dc452d8769" alt="EurekaBench's border collie scientist in a lab coat, holding a chart beside a light bulb and a speech bubble reading Eureka!" width="1292" height="1218" fetchpriority="high"></div>
         </div>
         <p class="paper-title">Measuring Agentic Ability to Discover New Scientific Insights</p>
         <div class="benchmark-stats" aria-label="Benchmark size">
@@ -63,13 +63,13 @@
       <div class="table-frame">
         <div class="table-scroll" tabindex="0" role="region" aria-label="EurekaBench leaderboard; scroll horizontally to see all columns on a small screen">
           <table id="results-table">
-            <caption class="visually-hidden">Main manuscript results. AI models ranked by conditioned score. The human scientist reference is listed separately. Select a metric heading to sort.</caption>
+            <caption class="visually-hidden">Main manuscript results. AI models ranked by final score (conditional). The human scientist reference is listed separately. Select a metric heading to sort.</caption>
             <colgroup><col class="rank-col"><col class="model-col"><col class="score-col"><col class="accuracy-col"><col class="insights-col"><col class="failures-col"><col class="calls-col"><col class="cost-col"></colgroup>
             <thead>
               <tr>
                 <th scope="col" class="rank-heading">#</th>
                 <th scope="col" class="model-heading">Model <span class="header-secondary">/ Agent</span></th>
-                <th scope="col" aria-sort="descending"><button type="button" class="sort-button primary-sort" data-sort="score" aria-label="Sort by conditioned score">Conditioned<br>score <span class="sort-arrow" aria-hidden="true">↓</span></button></th>
+                <th scope="col" aria-sort="descending"><button type="button" class="sort-button primary-sort" data-sort="score" aria-label="Sort by final score (conditional)" title="Conditional on satisfying all scientific constraints; a submission scores zero if any constraint fails.">Final score<br><span class="score-qualifier">conditional</span> <span class="sort-arrow" aria-hidden="true">↓</span></button></th>
                 <th scope="col"><button type="button" class="sort-button" data-sort="accuracy" aria-label="Sort by predictive accuracy">Predictive<br>accuracy <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
                 <th scope="col"><button type="button" class="sort-button" data-sort="insights" aria-label="Sort by scientific insights">Scientific<br>insights <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
                 <th scope="col"><button type="button" class="sort-button" data-sort="failures" aria-label="Sort by scientific constraint failures">SC<br>failures <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
@@ -163,14 +163,14 @@
             </tfoot>
           </table>
         </div>
-        <div class="table-bottom"><p id="sort-status" aria-live="polite">Sorted by conditioned score</p><span class="desktop-table-hint">Click a column heading to sort <span aria-hidden="true">↕</span></span><span class="mobile-table-hint">Swipe for more metrics <span aria-hidden="true">→</span></span></div>
+        <div class="table-bottom"><p id="sort-status" aria-live="polite">Sorted by final score (conditional)</p><span class="desktop-table-hint">Click a column heading to sort <span aria-hidden="true">↕</span></span><span class="mobile-table-hint">Swipe for more metrics <span aria-hidden="true">→</span></span></div>
       </div>
       </div>
       <div id="chart-panel" role="tabpanel" aria-labelledby="chart-tab" hidden>
         <div id="scatter-chart"></div>
         <div id="chart-detail" aria-live="polite">Hover over a model for its scores. Select a point to keep its details visible.</div>
       </div>
-      <div class="leaderboard-notes"><p>Accuracy and insights are reported unconditionally. The human reference reflects existing scientific progress.</p><details class="scoring-details"><summary>How scoring works <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></summary><div class="scoring-content"><div><h3>Conditioned score</h3><p>Predictive-accuracy points and insight points are divided by their total number of criteria. A submission scores zero if it fails any scientific constraint. Scores are computed separately for both judges, then averaged.</p></div><div><h3>Predictive accuracy & insights</h3><p>Accuracy measures predictions on held-out data. Insights measure what can be derived from the submitted mechanism, assuming it is correct. Judges may run additional experiments to interpret and extrapolate the mechanism.</p></div><div><h3>Scientific constraints & reference</h3><p>SC failures count completed problems that fail either judge’s constraint tests, out of 26. The human reference uses existing scientific findings, rather than a matched four-hour run.</p></div></div></details></div>
+      <div class="leaderboard-notes"><details class="scoring-details"><summary>How scoring works <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></summary><div class="scoring-content"><div><h3>Final score (conditional)</h3><p>Predictive-accuracy points and insight points are divided by their total number of criteria. A submission scores zero if it fails any scientific constraint. Scores are computed separately for both judges, then averaged.</p></div><div><h3>Predictive accuracy & insights</h3><p>Accuracy measures predictions on held-out data. Insights measure what can be derived from the submitted mechanism, assuming it is correct. Judges may run additional experiments to interpret and extrapolate the mechanism.</p></div><div><h3>Scientific constraints & reference</h3><p>SC failures count completed problems that fail either judge’s constraint tests, out of 26. The human reference uses existing scientific findings, rather than a matched four-hour run.</p></div></div></details></div>
     </section>
 
     <section class="about-section" id="about" aria-labelledby="about-title"><div class="heading-with-marker"><h2 id="about-title">About EurekaBench</h2></div><p>Agents investigate scientific puzzles through long-horizon experiments, building mechanisms that explain their observations. We evaluate whether those mechanisms respect scientific constraints, predict held-out observations, and support interpretable scientific insights.</p></section>

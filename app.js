@@ -7,7 +7,7 @@
   const filter = document.querySelector('#harness-filter');
   const headings = [...document.querySelectorAll('[data-sort]')];
   const metrics = {
-    score: 'conditioned score', accuracy: 'predictive accuracy',
+    score: 'final score (conditional)', accuracy: 'predictive accuracy',
     insights: 'scientific insights', failures: 'SC failures', calls: 'calls', cost: 'cost'
   };
   const state = { metric: 'score', ascending: false, harness: 'all' };
@@ -96,7 +96,7 @@
 
   document.querySelector('#download-results').addEventListener('click', () => {
     const fields = ['model', 'harness', 'score', 'accuracy', 'insights', 'failures', 'calls', 'cost'];
-    const columnNames = ['Model', 'Agent harness', 'Conditioned score (%)', 'Predictive accuracy (%)', 'Scientific insights (%)', 'SC failures (out of 26)', 'Calls', 'Cost (USD)'];
+    const columnNames = ['Model', 'Agent harness', 'Final score (conditional, %)', 'Predictive accuracy (%)', 'Scientific insights (%)', 'SC failures (out of 26)', 'Calls', 'Cost (USD)'];
     const csvCell = value => `"${String(value ?? '').replaceAll('"', '""')}"`;
     const allRows = [...rows].sort((a, b) => Number(b.dataset.score) - Number(a.dataset.score));
     allRows.push(document.querySelector('#human-reference'));

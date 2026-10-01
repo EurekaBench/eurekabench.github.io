@@ -75,7 +75,7 @@
       htmlElement('span', 'scatter-detail-harness', item.human ? 'Reference from existing scientific progress' : item.harness)
     );
     const metrics = htmlElement('dl', 'scatter-detail-metrics');
-    [['Predictive accuracy', item.accuracy], ['Insights', item.insights], ['Conditioned score', item.score]].forEach(([name, value]) => {
+    [['Predictive accuracy', item.accuracy], ['Insights', item.insights], ['Final score (conditional)', item.score]].forEach(([name, value]) => {
       const metric = htmlElement('div', 'scatter-detail-metric');
       metric.append(htmlElement('dt', 'scatter-detail-label', name), htmlElement('dd', 'scatter-detail-value', percent(value)));
       metrics.append(metric);
@@ -221,7 +221,7 @@
       const group = svgElement('g', {
         class: `scatter-point ${providerClass(item)}${selected === item.id ? ' scatter-selected' : ''}`,
         tabindex: '0', role: 'button', 'aria-pressed': String(selected === item.id),
-        'aria-label': `${item.model}${item.human ? ', human reference' : `, ${item.harness}`}: predictive accuracy ${percent(item.accuracy)}, insights ${percent(item.insights)}, conditioned score ${percent(item.score)}. Select to show results.`,
+        'aria-label': `${item.model}${item.human ? ', human reference' : `, ${item.harness}`}: predictive accuracy ${percent(item.accuracy)}, insights ${percent(item.insights)}, final score (conditional) ${percent(item.score)}. Select to show results.`,
         'data-id': item.id
       });
       const lines = modelLabelLines(item, compact);
