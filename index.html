@@ -9,11 +9,11 @@
   <meta property="og:description" content="Measuring Agentic Ability to Discover New Scientific Insights">
   <meta property="og:type" content="website">
   <title>EurekaBench — Scientific Discovery Benchmark</title>
-  <link rel="icon" href="assets/eurekabench-logo.png?v=dc452d8769" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=final-score-conditional">
+  <link rel="icon" href="assets/eurekabench-logo.png?v=56da983068" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=paper-logo-palette">
   <link rel="stylesheet" href="scatter.css">
-  <script src="app.js?v=final-score-conditional" defer></script>
-  <script src="scatter.js?v=final-score-conditional" defer></script>
+  <script src="app.js?v=paper-logo-palette" defer></script>
+  <script src="scatter.js?v=model-xhigh" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -22,8 +22,8 @@
       <a class="wordmark" href="index.html" aria-label="EurekaBench home">EurekaBench<span class="wordmark-dot" aria-hidden="true"></span></a>
       <nav aria-label="Main navigation">
         <a class="nav-link active" href="index.html" aria-current="page">Leaderboard</a>
-        <span class="nav-link nav-link-unavailable" role="link" aria-disabled="true" title="Paper coming soon">Paper</span>
-        <a class="nav-link" id="github-link" href="https://github.com/EurekaBench" target="_blank" rel="noopener">Github<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
+        <a class="nav-link" href="https://arxiv.org/abs/2610.00492" target="_blank" rel="noopener noreferrer">Paper<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
+        <a class="nav-link" id="github-link" href="https://github.com/EurekaBench/EurekaBench" target="_blank" rel="noopener">GitHub<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
         <a class="nav-link" href="team.html">Our Team</a>
         <a class="nav-link" href="contribute.html">Contribute</a>
         <a class="nav-link" href="contact.html">Contact</a>
@@ -36,13 +36,21 @@
       <div class="hero-copy">
         <div class="hero-heading">
           <h1 id="site-title">EurekaBench</h1>
-          <div class="hero-art"><img src="assets/eurekabench-logo.png?v=dc452d8769" alt="EurekaBench's border collie scientist in a lab coat, holding a chart beside a light bulb and a speech bubble reading Eureka!" width="1292" height="1218" fetchpriority="high"></div>
+          <div class="hero-art"><img src="assets/eurekabench-logo.png?v=56da983068" alt="EurekaBench's border collie scientist in a lab coat, holding a chart beside a light bulb and a speech bubble reading Eureka!" width="1362" height="1155" fetchpriority="high"></div>
         </div>
         <p class="paper-title">Measuring Agentic Ability to Discover New Scientific Insights</p>
-        <div class="benchmark-stats" aria-label="Benchmark size">
-          <span><strong>26</strong> tasks</span><i aria-hidden="true"></i>
-          <span><strong>6</strong> scientific domains</span><i aria-hidden="true"></i>
-          <span><strong>306</strong> insight questions</span>
+        <div class="benchmark-stats" aria-label="Benchmark coverage">
+          <div class="benchmark-overview">
+            <p class="benchmark-domains"><strong>6</strong> scientific domains</p>
+          </div>
+          <ul class="domain-list" aria-label="Scientific domains">
+            <li class="domain-neuroscience"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 7c-1-5-8-4-8 1-5 0-6 7-3 9-3 5 1 10 5 9 2 4 6 2 6-1V7Zm0 0c1-5 8-4 8 1 5 0 6 7 3 9 3 5-1 10-5 9-2 4-6 2-6-1V7ZM8 8c0 3 2 4 4 4M5 17c2-1 5 0 5 3m0 6v-3m14-15c0 3-2 4-4 4m7 5c-2-1-5 0-5 3m0 6v-3"/></svg><span>Neuroscience</span></li>
+            <li class="domain-computer-science"><svg aria-hidden="true" viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="3"/><rect x="12" y="12" width="8" height="8" rx="1"/><path d="M12 3v4m8-4v4m-8 18v4m8-4v4M3 12h4m-4 8h4m18-8h4m-4 8h4"/></svg><span>Computer science</span></li>
+            <li class="domain-chemistry"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11 4h10m-8 0v9L5 25c-1 2 0 3 2 3h18c2 0 3-1 2-3l-8-12V4M9 20h14"/><circle cx="13" cy="24" r="1"/><circle cx="19" cy="17" r="1"/></svg><span>Chemistry</span></li>
+            <li class="domain-astrophysics"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="17" r="7"/><ellipse cx="16" cy="17" rx="15" ry="4.5" transform="rotate(-30 16 17)"/><path d="M25 2v6m-3-3h6M6 4v3M4.5 5.5h3"/></svg><span>Astrophysics</span></li>
+            <li class="domain-geophysics"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><path d="m6 8 6 1 2 4-3 3-5-1-3 2m25-7-5 1-3 4 2 4-1 5-4 3m-6-6 4-2 3 3-2 5M4 21l4 1"/></svg><span>Geophysics</span></li>
+            <li class="domain-plasma-physics"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="m18 4-8 14h6l-2 10 9-15h-7l2-9ZM5 8c-4 4-4 12 0 16m22-16c4 4 4 12 0 16M8 11c-2 3-2 7 0 10m16-10c2 3 2 7 0 10"/></svg><span>Plasma physics</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -63,133 +71,166 @@
       <div class="table-frame">
         <div class="table-scroll" tabindex="0" role="region" aria-label="EurekaBench leaderboard; scroll horizontally to see all columns on a small screen">
           <table id="results-table">
-            <caption class="visually-hidden">Main manuscript results. AI models ranked by final score (conditional). The human scientist reference is listed separately. Select a metric heading to sort.</caption>
-            <colgroup><col class="rank-col"><col class="model-col"><col class="score-col"><col class="accuracy-col"><col class="insights-col"><col class="failures-col"><col class="calls-col"><col class="cost-col"></colgroup>
+            <caption class="visually-hidden">Main manuscript results. AI models ranked by final score (CS). The human scientist reference is listed separately. Select a metric heading to sort.</caption>
+            <colgroup><col class="rank-col"><col class="model-col"><col class="score-col"><col class="accuracy-col"><col class="insights-col"><col class="failures-col"></colgroup>
             <thead>
               <tr>
                 <th scope="col" class="rank-heading">#</th>
                 <th scope="col" class="model-heading">Model <span class="header-secondary">/ Agent</span></th>
-                <th scope="col" aria-sort="descending"><button type="button" class="sort-button primary-sort" data-sort="score" aria-label="Sort by final score (conditional)" title="Conditional on satisfying all scientific constraints; a submission scores zero if any constraint fails.">Final score<br><span class="score-qualifier">conditional</span> <span class="sort-arrow" aria-hidden="true">↓</span></button></th>
-                <th scope="col"><button type="button" class="sort-button" data-sort="accuracy" aria-label="Sort by predictive accuracy">Predictive<br>accuracy <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-                <th scope="col"><button type="button" class="sort-button" data-sort="insights" aria-label="Sort by scientific insights">Scientific<br>insights <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-                <th scope="col"><button type="button" class="sort-button" data-sort="failures" aria-label="Sort by scientific constraint failures">SC<br>failures <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-                <th scope="col" class="efficiency-cell"><button type="button" class="sort-button" data-sort="calls" aria-label="Sort by calls">Calls <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-                <th scope="col"><button type="button" class="sort-button" data-sort="cost" aria-label="Sort by cost in US dollars">Cost <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+                <th scope="col" aria-sort="descending"><button type="button" class="sort-button primary-sort" data-sort="score" aria-label="Sort by final score (CS)" title="Conditional on satisfying all scientific constraints; a submission scores zero if any constraint fails.">Final score (CS) <span class="sort-arrow" aria-hidden="true">↓</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="accuracy" aria-label="Sort by predictive accuracy (PA)">Predictive Accuracy (PA) <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="insights" aria-label="Sort by scientific insights (SI)">Scientific insights (SI) <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="failures" aria-label="Sort by scientific constraints (SC) failures">Scientific constraints (SC) failures <span class="sort-arrow" aria-hidden="true">↕</span></button></th>
               </tr>
             </thead>
             <tbody id="model-results">
-              <tr id="fable-51" class="is-leader" data-model="Claude Fable 5.1" data-harness="Claude Code" data-score="29.8" data-accuracy="47.4" data-insights="42.4" data-failures="15" data-calls="104" data-cost="23.96">
+              <tr id="fable-51" class="is-leader" data-model="Claude Fable 5.1 (xhigh)" data-harness="Claude Code" data-score="29.8" data-accuracy="47.4" data-insights="42.4" data-failures="15">
                 <td><span class="rank">01</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot claude" aria-hidden="true"></span>Claude Fable 5.1</span><span class="harness">Claude Code</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot claude" aria-hidden="true"></span>Claude Fable 5.1 (xhigh)</span><span class="harness">Claude Code</span></td>
                 <td><span class="score-value">29.8<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:29.8%"></span></span></td>
                 <td>47.4<span class="unit">%</span></td>
                 <td>42.4<span class="unit">%</span></td>
                 <td>15<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">104</td>
-                <td class="efficiency-number">$23.96</td>
               </tr>
-              <tr id="gpt-6-astra" class="" data-model="GPT 6 Astra" data-harness="Codex" data-score="28.7" data-accuracy="47.4" data-insights="29.4" data-failures="10" data-calls="149" data-cost="24.62">
+              <tr id="gpt-6-astra" class="" data-model="GPT 6 Astra (xhigh)" data-harness="Codex" data-score="28.7" data-accuracy="47.4" data-insights="29.4" data-failures="10">
                 <td><span class="rank">02</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot codex" aria-hidden="true"></span>GPT 6 Astra</span><span class="harness">Codex</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot codex" aria-hidden="true"></span>GPT 6 Astra (xhigh)</span><span class="harness">Codex</span></td>
                 <td><span class="score-value">28.7<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:28.7%"></span></span></td>
                 <td>47.4<span class="unit">%</span></td>
                 <td>29.4<span class="unit">%</span></td>
                 <td>10<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">149</td>
-                <td class="efficiency-number">$24.62</td>
               </tr>
-              <tr id="opus-5" class="" data-model="Claude Opus 5" data-harness="Claude Code" data-score="27.3" data-accuracy="42.9" data-insights="36.2" data-failures="15" data-calls="166" data-cost="17.56">
+              <tr id="opus-5" class="" data-model="Claude Opus 5 (xhigh)" data-harness="Claude Code" data-score="27.3" data-accuracy="42.9" data-insights="36.2" data-failures="15">
                 <td><span class="rank">03</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot claude" aria-hidden="true"></span>Claude Opus 5</span><span class="harness">Claude Code</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot claude" aria-hidden="true"></span>Claude Opus 5 (xhigh)</span><span class="harness">Claude Code</span></td>
                 <td><span class="score-value">27.3<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:27.3%"></span></span></td>
                 <td>42.9<span class="unit">%</span></td>
                 <td>36.2<span class="unit">%</span></td>
                 <td>15<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">166</td>
-                <td class="efficiency-number">$17.56</td>
               </tr>
-              <tr id="gpt-56-sol" class="" data-model="GPT 5.6 Sol" data-harness="Codex" data-score="19.4" data-accuracy="41.9" data-insights="25.9" data-failures="17" data-calls="55" data-cost="2.23">
+              <tr id="gpt-56-sol" class="" data-model="GPT 5.6 Sol (xhigh)" data-harness="Codex" data-score="19.4" data-accuracy="41.9" data-insights="25.9" data-failures="17">
                 <td><span class="rank">04</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot codex" aria-hidden="true"></span>GPT 5.6 Sol</span><span class="harness">Codex</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot codex" aria-hidden="true"></span>GPT 5.6 Sol (xhigh)</span><span class="harness">Codex</span></td>
                 <td><span class="score-value">19.4<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:19.4%"></span></span></td>
                 <td>41.9<span class="unit">%</span></td>
                 <td>25.9<span class="unit">%</span></td>
                 <td>17<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">55</td>
-                <td class="efficiency-number">$2.23</td>
               </tr>
-              <tr id="opus-48" class="" data-model="Claude Opus 4.8" data-harness="Claude Code" data-score="18.4" data-accuracy="42.7" data-insights="26.9" data-failures="16" data-calls="93" data-cost="9.75">
+              <tr id="opus-48" class="" data-model="Claude Opus 4.8 (xhigh)" data-harness="Claude Code" data-score="18.4" data-accuracy="42.7" data-insights="26.9" data-failures="16">
                 <td><span class="rank">05</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot claude" aria-hidden="true"></span>Claude Opus 4.8</span><span class="harness">Claude Code</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot claude" aria-hidden="true"></span>Claude Opus 4.8 (xhigh)</span><span class="harness">Claude Code</span></td>
                 <td><span class="score-value">18.4<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:18.4%"></span></span></td>
                 <td>42.7<span class="unit">%</span></td>
                 <td>26.9<span class="unit">%</span></td>
                 <td>16<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">93</td>
-                <td class="efficiency-number">$9.75</td>
               </tr>
-              <tr id="deepseek-v4-flash" class="" data-model="DeepSeek V4 Flash" data-harness="OpenHands" data-score="14.6" data-accuracy="29.9" data-insights="24.4" data-failures="15" data-calls="206" data-cost="1.24">
+              <tr id="deepseek-v4-flash" class="" data-model="DeepSeek V4 Flash (xhigh)" data-harness="OpenHands" data-score="14.6" data-accuracy="29.9" data-insights="24.4" data-failures="15">
                 <td><span class="rank">06</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot openhands" aria-hidden="true"></span>DeepSeek V4 Flash</span><span class="harness">OpenHands</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot openhands" aria-hidden="true"></span>DeepSeek V4 Flash (xhigh)</span><span class="harness">OpenHands</span></td>
                 <td><span class="score-value">14.6<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:14.6%"></span></span></td>
                 <td>29.9<span class="unit">%</span></td>
                 <td>24.4<span class="unit">%</span></td>
                 <td>15<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">206</td>
-                <td class="efficiency-number">$1.24</td>
               </tr>
-              <tr id="kimi-k3" class="" data-model="Kimi K3" data-harness="OpenHands" data-score="12.9" data-accuracy="28.8" data-insights="25.2" data-failures="16" data-calls="185" data-cost="7.19">
+              <tr id="kimi-k3" class="" data-model="Kimi K3 (xhigh)" data-harness="OpenHands" data-score="12.9" data-accuracy="28.8" data-insights="25.2" data-failures="16">
                 <td><span class="rank">07</span></td>
-                <td class="model-cell"><span class="model-name"><span class="provider-dot openhands" aria-hidden="true"></span>Kimi K3</span><span class="harness">OpenHands</span></td>
+                <td class="model-cell"><span class="model-name"><span class="provider-dot openhands" aria-hidden="true"></span>Kimi K3 (xhigh)</span><span class="harness">OpenHands</span></td>
                 <td><span class="score-value">12.9<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:12.9%"></span></span></td>
                 <td>28.8<span class="unit">%</span></td>
                 <td>25.2<span class="unit">%</span></td>
                 <td>16<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">185</td>
-                <td class="efficiency-number">$7.19</td>
               </tr>
             </tbody>
             <tfoot>
-              <tr id="human-reference" class="reference-row" data-model="Human scientist" data-harness="Human reference" data-score="63.7" data-accuracy="48.8" data-insights="69.7" data-failures="0" data-calls="" data-cost="">
+              <tr id="human-reference" class="reference-row" data-model="Human scientist" data-harness="Human reference" data-score="63.7" data-accuracy="48.8" data-insights="69.7" data-failures="0">
                 <td><span class="reference-label">REF</span></td>
                 <td class="model-cell"><span class="model-name">Human scientist</span><span class="harness">Existing scientific progress</span></td>
                 <td><span class="score-value">63.7<span class="unit">%</span></span><span class="score-track" aria-hidden="true"><span style="--score:63.7%"></span></span></td>
                 <td>48.8<span class="unit">%</span></td>
                 <td>69.7<span class="unit">%</span></td>
                 <td>0<span class="failure-total">/26</span></td>
-                <td class="efficiency-cell efficiency-number">—</td>
-                <td class="efficiency-number">—</td>
               </tr>
             </tfoot>
           </table>
         </div>
-        <div class="table-bottom"><p id="sort-status" aria-live="polite">Sorted by final score (conditional)</p><span class="desktop-table-hint">Click a column heading to sort <span aria-hidden="true">↕</span></span><span class="mobile-table-hint">Swipe for more metrics <span aria-hidden="true">→</span></span></div>
+        <div class="table-bottom"><p id="sort-status" aria-live="polite">Sorted by final score (CS)</p><span class="desktop-table-hint">Click a column heading to sort <span aria-hidden="true">↕</span></span><span class="mobile-table-hint">Swipe for more metrics <span aria-hidden="true">→</span></span></div>
       </div>
       </div>
       <div id="chart-panel" role="tabpanel" aria-labelledby="chart-tab" hidden>
         <div id="scatter-chart"></div>
         <div id="chart-detail" aria-live="polite">Hover over a model for its scores. Select a point to keep its details visible.</div>
       </div>
-      <div class="leaderboard-notes"><details class="scoring-details"><summary>How scoring works <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></summary><div class="scoring-content"><div><h3>Final score (conditional)</h3><p>Predictive-accuracy points and insight points are divided by their total number of criteria. A submission scores zero if it fails any scientific constraint. Scores are computed separately for both judges, then averaged.</p></div><div><h3>Predictive accuracy & insights</h3><p>Accuracy measures predictions on held-out data. Insights measure what can be derived from the submitted mechanism, assuming it is correct. Judges may run additional experiments to interpret and extrapolate the mechanism.</p></div><div><h3>Scientific constraints & reference</h3><p>SC failures count completed problems that fail either judge’s constraint tests, out of 26. The human reference uses existing scientific findings, rather than a matched four-hour run.</p></div></div></details></div>
+      <div class="leaderboard-notes"><details class="scoring-details"><summary>How scoring works <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></summary><div class="scoring-content"><div><h3>Final score (CS)</h3><p>Predictive-accuracy points and insight points are divided by their total number of criteria. A submission scores zero if it fails any scientific constraint. Scores are computed separately for both judges, then averaged.</p></div><div><h3>Predictive accuracy (PA) & insights (SI)</h3><p>Accuracy measures predictions on test data. Insights measure what can be derived from the submitted mechanism, assuming it is correct. Judges may run additional experiments to interpret and extrapolate the mechanism.</p></div><div><h3>Scientific constraints (SC) & reference</h3><p>SC failures count completed problems that fail either judge’s constraint tests, out of 26. The human reference uses existing scientific findings, rather than a matched four-hour run.</p></div></div></details></div>
     </section>
 
-    <section class="about-section" id="about" aria-labelledby="about-title"><div class="heading-with-marker"><h2 id="about-title">About EurekaBench</h2></div><p>Agents investigate scientific puzzles through long-horizon experiments, building mechanisms that explain their observations. We evaluate whether those mechanisms respect scientific constraints, predict held-out observations, and support interpretable scientific insights.</p></section>
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="heading-with-marker"><h2 id="about-title">About EurekaBench</h2></div>
+      <div class="about-copy">
+        <p>EurekaBench measures whether AI agents can discover mechanisms that explain scientific observations and support useful scientific insights. Built with domain experts, its tasks draw on recent, partially solved research problems. Agents start from initial observations, run iterative experiments, and submit a mechanism together with its implementation and experimental records.</p>
+        <p>We evaluate scientific constraints (SC), predictive accuracy (PA) on test data, and scientific insights (SI) that can be derived from the submitted mechanism. The insight questions are developed with domain experts and cover existing findings, open questions, and potential research directions. Judge agents can run additional experiments to assess these insights, while keeping the submitted mechanism unchanged.</p>
+      </div>
+    </section>
 
-      <section class="institution-section home-affiliations" aria-labelledby="home-institutions-title">
-        <h2 class="eyebrow" id="home-institutions-title">AFFILIATIONS</h2>
-        <ul class="institution-list">
-          <li class="institution institution-cmu"><a class="institution-link" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer" title="Carnegie Mellon University"><span class="institution-mark" aria-hidden="true"><img src="assets/institutions/cmu-icon.ico" alt="" loading="lazy"></span><span class="institution-name">Carnegie Mellon University</span></a></li>
-          <li class="institution institution-stanford"><a class="institution-link" href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" title="Stanford University"><span class="institution-mark" aria-hidden="true"><img src="assets/institutions/stanford-icon.png" alt="" loading="lazy"></span><span class="institution-name">Stanford University</span></a></li>
-          <li class="institution institution-yale"><a class="institution-link" href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer" title="Yale University"><span class="institution-mark" aria-hidden="true"><img src="assets/institutions/yale-icon.png" alt="" loading="lazy"></span><span class="institution-name">Yale University</span></a></li>
-          <li class="institution institution-mit"><a class="institution-link" href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer" title="Massachusetts Institute of Technology"><span class="institution-mark" aria-hidden="true"><img src="assets/institutions/mit-icon.svg" alt="" loading="lazy"></span><span class="institution-name">Massachusetts Institute of Technology</span></a></li>
-          <li class="institution institution-columbia"><a class="institution-link" href="https://www.columbia.edu/" target="_blank" rel="noopener noreferrer" title="Columbia University"><span class="institution-mark" aria-hidden="true"><img src="assets/institutions/columbia-icon.svg" alt="" loading="lazy"></span><span class="institution-name">Columbia University</span></a></li>
-          <li class="institution institution-princeton"><a class="institution-link" href="https://www.princeton.edu/" target="_blank" rel="noopener noreferrer" title="Princeton University"><span class="institution-mark" aria-hidden="true"><img src="assets/institutions/princeton-icon.svg" alt="" loading="lazy"></span><span class="institution-name">Princeton University</span></a></li>
-          <li class="institution institution-flatiron"><a class="institution-link" href="https://www.simonsfoundation.org/flatiron/" target="_blank" rel="noopener noreferrer" title="Flatiron Institute"><span class="institution-mark dark-logo" aria-hidden="true"><img src="assets/institutions/flatiron-icon.svg" alt="" loading="lazy"></span><span class="institution-name">Flatiron Institute</span></a></li>
-          <li class="institution institution-engram"><a class="institution-link" href="https://engram.com/" target="_blank" rel="noopener noreferrer" title="Engram"><span class="institution-mark dark-logo" aria-hidden="true"><img src="assets/institutions/engram-icon.svg" alt="" loading="lazy"></span><span class="institution-name">Engram</span></a></li>
-        </ul>
-      </section>
+    <section class="author-affiliation-section" id="author-affiliations" aria-labelledby="author-affiliations-title">
+      <div class="affiliation-heading"><h2 id="author-affiliations-title">Author affiliations</h2><a class="author-team-link" href="team.html">Meet the authors <span aria-hidden="true">→</span></a></div>
+      <ul class="affiliation-grid">
+        <li class="affiliation-school institution-cmu">
+          <a class="affiliation-logo" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer" aria-label="Carnegie Mellon University website"><img src="assets/institutions/cmu-icon.ico" alt="Carnegie Mellon University logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Language Technologies Institute</span></li><li><span class="affiliation-unit">Department of Chemistry</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-stanford">
+          <a class="affiliation-logo" href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" aria-label="Stanford University website"><img src="assets/institutions/stanford-icon.png" alt="Stanford University logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford University</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Department of Computer Science</span></li><li><span class="affiliation-unit">Department of Geophysics</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-yale">
+          <a class="affiliation-logo" href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer" aria-label="Yale University website"><img src="assets/institutions/yale-icon.png" alt="Yale University logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer">Yale University</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Department of Molecular, Cellular, and Developmental Biology</span></li><li><span class="affiliation-unit">Quantitative Biology Institute</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-mit">
+          <a class="affiliation-logo" href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer" aria-label="Massachusetts Institute of Technology website"><img src="assets/institutions/mit-icon.svg" alt="Massachusetts Institute of Technology logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">Massachusetts Institute of Technology</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Plasma Science and Fusion Center</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-columbia">
+          <a class="affiliation-logo" href="https://www.columbia.edu/" target="_blank" rel="noopener noreferrer" aria-label="Columbia University website"><img src="assets/institutions/columbia-icon.svg" alt="Columbia University logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.columbia.edu/" target="_blank" rel="noopener noreferrer">Columbia University</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Department of Applied Physics and Applied Mathematics</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-princeton">
+          <a class="affiliation-logo" href="https://www.princeton.edu/" target="_blank" rel="noopener noreferrer" aria-label="Princeton University website"><img src="assets/institutions/princeton-icon.svg" alt="Princeton University logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton University</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Department of Astrophysical Sciences</span></li><li><span class="affiliation-unit">Department of Computer Science</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-flatiron">
+          <a class="affiliation-logo dark-logo" href="https://www.simonsfoundation.org/flatiron/" target="_blank" rel="noopener noreferrer" aria-label="Flatiron Institute website"><img src="assets/institutions/flatiron-icon.svg" alt="Flatiron Institute logo" loading="lazy"></a>
+          <div class="affiliation-copy"><h3><a href="https://www.simonsfoundation.org/flatiron/" target="_blank" rel="noopener noreferrer">Flatiron Institute</a></h3><ul class="affiliation-units"><li><span class="affiliation-unit">Center for Computational Astrophysics</span></li></ul></div>
+        </li>
+        <li class="affiliation-school institution-engram">
+          <a class="affiliation-logo dark-logo" href="https://engram.com/" target="_blank" rel="noopener noreferrer" aria-label="Engram website"><img src="assets/institutions/engram-icon.svg" alt="Engram logo" loading="lazy"></a>
+          <div class="affiliation-copy"><ul class="affiliation-units"><li><span class="affiliation-unit">Engram</span></li></ul></div>
+        </li>
+      </ul>
+    </section>
 
-      <section id="citation" class="citation-section" aria-labelledby="citation-title"><h2 id="citation-title">Citation</h2><pre id="citation-entry" class="citation-entry" aria-label="Citation entry, to be added"></pre></section>
+    <section id="citation" class="citation-section" aria-labelledby="citation-title">
+      <div class="section-header citation-heading">
+        <h2 id="citation-title">Citation</h2>
+        <button id="copy-citation" class="copy-citation" type="button" hidden><svg aria-hidden="true" viewBox="0 0 20 20"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M13 7V3H3v10h4"/></svg><span>Copy BibTeX</span></button>
+      </div>
+      <p class="citation-paper"><a href="https://arxiv.org/abs/2610.00492" target="_blank" rel="noopener noreferrer">EurekaBench: Measuring Agentic Ability to Discover New Scientific Insights</a></p>
+      <pre id="citation-entry" class="citation-entry" tabindex="0" aria-label="BibTeX citation; scroll horizontally to read on a small screen"><code>@misc{geng2026eurekabench,
+  title         = {{EurekaBench}: Measuring Agentic Ability to Discover New Scientific Insights},
+  author        = {Jiayi Geng and Zhengxuan Wu and Kevin S. Chen and
+                   Seungone Kim and Joseph Janssen and Zora Zhiruo Wang and
+                   Bhupalee Kalita and Runtian Gao and Aaron Ho and
+                   Andrew Oakleigh Nelson and Olexandr Isayev and
+                   Francisco Villaescusa-Navarro and Ching-Yao Lai and
+                   Howard Chen and Graham Neubig},
+  year          = {2026},
+  eprint        = {2610.00492},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2610.00492}
+}</code></pre>
+      <p id="citation-copy-status" class="visually-hidden" role="status"></p>
+    </section>
   </main>
 
   <footer class="site-footer page-width"><span>EurekaBench <span aria-hidden="true">·</span> 2026</span><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>

@@ -7,8 +7,8 @@
   const filter = document.querySelector('#harness-filter');
   const headings = [...document.querySelectorAll('[data-sort]')];
   const metrics = {
-    score: 'final score (conditional)', accuracy: 'predictive accuracy',
-    insights: 'scientific insights', failures: 'SC failures', calls: 'calls', cost: 'cost'
+    score: 'final score (CS)', accuracy: 'predictive accuracy (PA)',
+    insights: 'scientific insights (SI)', failures: 'scientific constraints (SC) failures'
   };
   const state = { metric: 'score', ascending: false, harness: 'all' };
 
@@ -85,7 +85,7 @@
 
   headings.forEach(button => button.addEventListener('click', () => {
     const metric = button.dataset.sort;
-    state.ascending = state.metric === metric ? !state.ascending : ['failures', 'calls', 'cost'].includes(metric);
+    state.ascending = state.metric === metric ? !state.ascending : metric === 'failures';
     state.metric = metric;
     updateResults();
   }));
@@ -95,8 +95,8 @@
   });
 
   document.querySelector('#download-results').addEventListener('click', () => {
-    const fields = ['model', 'harness', 'score', 'accuracy', 'insights', 'failures', 'calls', 'cost'];
-    const columnNames = ['Model', 'Agent harness', 'Final score (conditional, %)', 'Predictive accuracy (%)', 'Scientific insights (%)', 'SC failures (out of 26)', 'Calls', 'Cost (USD)'];
+    const fields = ['model', 'harness', 'score', 'accuracy', 'insights', 'failures'];
+    const columnNames = ['Model', 'Agent harness', 'Final score (CS) (%)', 'Predictive Accuracy (PA) (%)', 'Scientific insights (SI) (%)', 'Scientific constraints (SC) failures (out of 26)'];
     const csvCell = value => `"${String(value ?? '').replaceAll('"', '""')}"`;
     const allRows = [...rows].sort((a, b) => Number(b.dataset.score) - Number(a.dataset.score));
     allRows.push(document.querySelector('#human-reference'));
@@ -110,5 +110,31 @@
     anchor.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
+
+  const copyCitation = document.querySelector('#copy-citation');
+  if (copyCitation) {
+    copyCitation.hidden = false;
+    const label = copyCitation.querySelector('span');
+    const status = document.querySelector('#citation-copy-status');
+    let resetCopyLabel;
+    copyCitation.addEventListener('click', async () => {
+      const entry = document.querySelector('#citation-entry');
+      clearTimeout(resetCopyLabel);
+      try {
+        await navigator.clipboard.writeText(entry.textContent.trim());
+        label.textContent = 'Copied';
+        status.textContent = 'BibTeX citation copied.';
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(entry);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        label.textContent = 'Select & copy';
+        status.textContent = 'Citation selected. Use your browser’s Copy command.';
+      }
+      resetCopyLabel = setTimeout(() => { label.textContent = 'Copy BibTeX'; }, 2500);
+    });
+  }
 
 })();

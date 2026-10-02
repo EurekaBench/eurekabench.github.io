@@ -75,7 +75,7 @@
       htmlElement('span', 'scatter-detail-harness', item.human ? 'Reference from existing scientific progress' : item.harness)
     );
     const metrics = htmlElement('dl', 'scatter-detail-metrics');
-    [['Predictive accuracy', item.accuracy], ['Insights', item.insights], ['Final score (conditional)', item.score]].forEach(([name, value]) => {
+    [['Predictive Accuracy (PA)', item.accuracy], ['Scientific insights (SI)', item.insights], ['Final score (CS)', item.score]].forEach(([name, value]) => {
       const metric = htmlElement('div', 'scatter-detail-metric');
       metric.append(htmlElement('dt', 'scatter-detail-label', name), htmlElement('dd', 'scatter-detail-value', percent(value)));
       metrics.append(metric);
@@ -116,13 +116,13 @@
     const above = point.y - 20 - labelHeight;
     if (compact) {
       const layouts = {
-        'Claude Fable 5.1': { x: point.x - labelWidth / 2, y: above },
-        'Claude Opus 5': { x: point.x - 18 - labelWidth, y: above },
-        'Claude Opus 4.8': { x: point.x - 18 - labelWidth, y: above },
-        'GPT 6 Astra': { x: point.x - labelWidth / 2, y: point.y - iconSize / 2 - 7 - labelHeight },
-        'GPT 5.6 Sol': { x: point.x + 14, y: point.y + 18 },
-        'DeepSeek V4 Flash': { x: point.x - labelWidth / 2, y: point.y + 18 },
-        'Kimi K3': { x: point.x - 14 - labelWidth, y: point.y - 22 - labelHeight }
+        'Claude Fable 5.1 (xhigh)': { x: point.x - labelWidth / 2, y: above },
+        'Claude Opus 5 (xhigh)': { x: point.x - 18 - labelWidth, y: above },
+        'Claude Opus 4.8 (xhigh)': { x: point.x - 18 - labelWidth, y: above },
+        'GPT 6 Astra (xhigh)': { x: point.x - labelWidth / 2, y: point.y - iconSize / 2 - 7 - labelHeight },
+        'GPT 5.6 Sol (xhigh)': { x: point.x + 14, y: point.y + 18 },
+        'DeepSeek V4 Flash (xhigh)': { x: point.x - labelWidth / 2, y: point.y + 18 },
+        'Kimi K3 (xhigh)': { x: point.x - 14 - labelWidth, y: point.y - 22 - labelHeight }
       };
       if (item.human) return { x: point.x - 20 - labelWidth, y: point.y - labelHeight / 2 };
       return layouts[item.model];
@@ -133,26 +133,26 @@
     const below = { x: point.x - labelWidth / 2, y: point.y + gap };
     if (item.human) return left;
     return {
-      'Claude Fable 5.1': right,
-      'Claude Opus 5': left,
-      'Claude Opus 4.8': right,
-      'GPT 6 Astra': right,
-      'GPT 5.6 Sol': left,
-      'DeepSeek V4 Flash': below,
-      'Kimi K3': left
+      'Claude Fable 5.1 (xhigh)': right,
+      'Claude Opus 5 (xhigh)': left,
+      'Claude Opus 4.8 (xhigh)': right,
+      'GPT 6 Astra (xhigh)': right,
+      'GPT 5.6 Sol (xhigh)': left,
+      'DeepSeek V4 Flash (xhigh)': below,
+      'Kimi K3 (xhigh)': left
     }[item.model];
   }
 
   function modelLabelLines(item, compact) {
     if (!compact) return [item.model];
     return {
-      'Claude Fable 5.1': ['Claude Fable', '5.1'],
-      'Claude Opus 5': ['Claude Opus', '5'],
-      'Claude Opus 4.8': ['Claude Opus', '4.8'],
-      'GPT 6 Astra': ['GPT 6', 'Astra'],
-      'GPT 5.6 Sol': ['GPT 5.6', 'Sol'],
-      'DeepSeek V4 Flash': ['DeepSeek V4', 'Flash'],
-      'Kimi K3': ['Kimi K3'],
+      'Claude Fable 5.1 (xhigh)': ['Claude Fable', '5.1 (xhigh)'],
+      'Claude Opus 5 (xhigh)': ['Claude Opus', '5 (xhigh)'],
+      'Claude Opus 4.8 (xhigh)': ['Claude Opus', '4.8 (xhigh)'],
+      'GPT 6 Astra (xhigh)': ['GPT 6', 'Astra (xhigh)'],
+      'GPT 5.6 Sol (xhigh)': ['GPT 5.6', 'Sol (xhigh)'],
+      'DeepSeek V4 Flash (xhigh)': ['DeepSeek V4', 'Flash (xhigh)'],
+      'Kimi K3 (xhigh)': ['Kimi K3', '(xhigh)'],
       'Human scientist': ['Human scientist']
     }[item.model] || [item.model];
   }
@@ -208,8 +208,8 @@
     }
     axes.append(
       svgElement('line', { class: 'scatter-axis', x1: box.left, y1: y(0), x2: width - box.right, y2: y(0) }),
-      svgElement('text', { class: 'scatter-axis-title', x: box.left, y: 17 }, 'Insights (%)'),
-      svgElement('text', { class: 'scatter-axis-title', x: box.left + plotWidth / 2, y: height - 13, 'text-anchor': 'middle' }, 'Predictive accuracy (%)')
+      svgElement('text', { class: 'scatter-axis-title', x: box.left, y: 17 }, 'Scientific insights (SI) (%)'),
+      svgElement('text', { class: 'scatter-axis-title', x: box.left + plotWidth / 2, y: height - 13, 'text-anchor': 'middle' }, 'Predictive Accuracy (PA) (%)')
     );
     svg.append(axes);
     host.append(svg, tooltip);
@@ -221,7 +221,7 @@
       const group = svgElement('g', {
         class: `scatter-point ${providerClass(item)}${selected === item.id ? ' scatter-selected' : ''}`,
         tabindex: '0', role: 'button', 'aria-pressed': String(selected === item.id),
-        'aria-label': `${item.model}${item.human ? ', human reference' : `, ${item.harness}`}: predictive accuracy ${percent(item.accuracy)}, insights ${percent(item.insights)}, final score (conditional) ${percent(item.score)}. Select to show results.`,
+        'aria-label': `${item.model}${item.human ? ', human reference' : `, ${item.harness}`}: predictive accuracy (PA) ${percent(item.accuracy)}, scientific insights (SI) ${percent(item.insights)}, final score (CS) ${percent(item.score)}. Select to show results.`,
         'data-id': item.id
       });
       const lines = modelLabelLines(item, compact);
@@ -234,8 +234,8 @@
       svg.append(group);
       // Keep the close Opus/OpenAI pair on opposite sides of their own logos.
       // Wrap the Opus label within the gap before GPT 6, never shift a data mark.
-      const astra = visible.find(candidate => candidate.model === 'GPT 6 Astra');
-      if (!compact && item.model === 'Claude Opus 4.8' && astra) {
+      const astra = visible.find(candidate => candidate.model === 'GPT 6 Astra (xhigh)');
+      if (!compact && item.model === 'Claude Opus 4.8 (xhigh)' && astra) {
         const available = x(astra.accuracy) - point.x - iconSize - 14;
         const wrapped = [];
         let line = '';
@@ -256,7 +256,7 @@
       const labelHeight = labelBounds.height;
       let preferred = labelLayout(item, point, labelWidth, labelHeight, compact, iconSize)
         || { x: point.x + 21, y: point.y - labelHeight / 2 };
-      if (!compact && item.model === 'Claude Fable 5.1' && preferred.x + labelWidth > width - 8) {
+      if (!compact && item.model === 'Claude Fable 5.1 (xhigh)' && preferred.x + labelWidth > width - 8) {
         preferred = { x: point.x - iconSize / 2 - 7 - labelWidth, y: point.y - labelHeight / 2 };
       }
       const labelX = Math.max(8, Math.min(preferred.x, width - 8 - labelWidth));
