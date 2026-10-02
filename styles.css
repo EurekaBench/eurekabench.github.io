@@ -193,7 +193,7 @@ details[open] > summary svg { transform: rotate(45deg); }
 .contribute-intro { font: 400 18px/1.6 var(--serif); color: #414b43; margin-top: 9px; }
 .contribution-contact { margin-top: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
 .contribute-section .contribution-contact h2, .contribute-section .contribution-direct-title { font-size: 32px; }
-.contribution-contact p, .contribution-direct-intro { max-width: 760px; margin-top: 9px; font: 400 18px/1.6 var(--serif); color: #414b43; }
+.contribution-contact p, .contribution-direct-intro { margin-top: 9px; font: 400 18px/1.6 var(--serif); color: #414b43; text-wrap: pretty; }
 .standalone-page .contribution-contact .contact-email { margin-top: 12px; }
 .contribution-direct-title { margin-top: 25px; }
 .contribution-kinds { display: flex; gap: 26px; margin-top: 15px; border-bottom: 1px solid var(--line); }
