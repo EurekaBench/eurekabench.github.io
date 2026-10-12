@@ -365,6 +365,8 @@ details[open] > summary svg { transform: rotate(45deg); }
 
 .citation-section { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
 .contact-section { margin-top: 30px; padding-top: 27px; border-top: 1px solid var(--line); }
+.contact-section p { margin-top: 16px; color: #414b43; font: 400 18px/1.6 var(--serif); text-wrap: wrap; }
+.contact-section p a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Navigation opens independent documents; only the home page contains results. */
 .standalone-page { min-height: calc(100svh - 170px); padding-top: 35px; }
