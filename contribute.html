@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <title>Contribute — EurekaBench</title>
   <link rel="icon" href="assets/eurekabench-logo.png?v=56da983068" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=contribute-full-width">
-  <script src="contribute.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=inline-contribution-email">
+  <script src="contribute.js?v=consistent-problem-name" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,32 +34,90 @@
       <h1 class="page-title" id="contribute-title">Contribute</h1>
       <section class="contribution-contact" aria-labelledby="conversation-title">
         <h2 id="conversation-title">Start with a conversation</h2>
-        <p>Contact Jiayi Geng directly to discuss your idea. A few sentences about the scientific problem or insight you have in mind are enough to get started.</p>
-        <a class="contact-email" href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>
+        <p>If you're interested in contributing, you can email Jiayi Geng at <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a> about a new scientific discovery problem or additional scientific insights for an existing scientific discovery problem.</p>
       </section>
       <h2 class="contribution-direct-title" id="direct-contribution-title">Ready to contribute?</h2>
-      <p class="contribution-direct-intro">Use the form below to propose a new scientific problem or contribute an insight into an existing one.</p>
+      <p class="contribution-direct-intro">We welcome domain experts interested in helping expand EurekaBench. You can propose a new scientific discovery problem or add scientific insights to an existing scientific discovery problem through the form below.</p>
       <div class="contribution-kinds" role="group" aria-labelledby="direct-contribution-title">
-        <button type="button" data-contribution-kind="problem" aria-pressed="true" aria-controls="contribution-form">Propose a new problem</button>
-        <button type="button" data-contribution-kind="insight" aria-pressed="false" aria-controls="contribution-form">Contribute an insight</button>
+        <button type="button" data-contribution-kind="problem" aria-pressed="true" aria-controls="problem-guidance contribution-form">New scientific problem</button>
+        <button type="button" data-contribution-kind="insight" aria-pressed="false" aria-controls="insight-guidance contribution-form">Additional scientific insights</button>
       </div>
-      <form id="contribution-form" class="contribution-form" aria-labelledby="direct-contribution-title">
+      <section class="contribution-guide" id="problem-guidance" data-contribution-guide="problem" aria-label="Guidelines for new scientific discovery problems">
+        <p class="contribution-guide-intro">We'd like to collaborate with domain experts on new scientific discovery problems in the six domains currently included in EurekaBench and in new domains. These include problems from unpublished research and problems from recently published research that remain only partially solved.</p>
+        <p class="contribution-guide-intro">The problem description should explain the scientific discovery problem and why it matters, identify the initial observations that challenge scientists' understanding of the world, and summarize the progress human scientists have made on the problem. In EurekaBench, these observations serve as the starting point for exploration. Agents run experiments to discover mechanisms that explain the observations, and we evaluate what scientific insights can be derived from those mechanisms.</p>
+      </section>
+      <section class="contribution-guide" id="insight-guidance" data-contribution-guide="insight" aria-label="Guidelines for additional scientific insights" hidden>
+        <p class="contribution-guide-intro">Exploring a scientific discovery problem through different approaches can reveal different scientific insights. If you have explored a scientific discovery problem already included in EurekaBench through a different approach, we welcome additional scientific insights based on your research experience.</p>
+        <p class="contribution-guide-intro">A scientific insight could explain an observation that is not yet understood, deepen our understanding of the scientific discovery problem, or suggest useful future directions to explore.</p>
+        <p class="contribution-guide-intro">To contribute additional scientific insights, choose an existing scientific discovery problem from the list below. In the Scientific insights field, describe the additional scientific insights you expect to learn from a mechanism discovered by an AI agent.</p>
+      </section>
+      <form id="contribution-form" class="contribution-form" action="https://formsubmit.co/ogeng@cs.cmu.edu" method="POST" aria-labelledby="direct-contribution-title">
+        <p class="contribution-required-note"><span class="required-marker" aria-hidden="true">*</span> Required fields</p>
         <input type="hidden" id="contribution-kind" name="kind" value="problem">
-        <div class="contribution-field"><label for="contribution-name">Your name</label><input id="contribution-name" name="name" autocomplete="name" required aria-required="true" maxlength="120"></div>
-        <div class="contribution-field"><label for="contribution-affiliation">Affiliation</label><input id="contribution-affiliation" name="affiliation" autocomplete="organization" required aria-required="true" maxlength="200"></div>
-        <div class="contribution-field"><label for="contribution-webpage">Personal webpage</label><input id="contribution-webpage" name="webpage" type="url" autocomplete="url" placeholder="https://" required aria-required="true" pattern="[Hh][Tt][Tt][Pp][Ss]?://.+" title="Enter a full http:// or https:// URL." maxlength="2000"></div>
-        <div class="contribution-field"><label for="contribution-title" id="contribution-title-label">Problem title</label><input id="contribution-title" name="title" required aria-required="true" maxlength="200"></div>
-        <div class="contribution-field" id="contribution-domain-field"><label for="contribution-domain">Domain</label><select id="contribution-domain" name="domain" required aria-required="true"><option value="" disabled selected>Select a domain</option><option value="Neuroscience">Neuroscience</option><option value="Computer science">Computer science</option><option value="Chemistry">Chemistry</option><option value="Astrophysics">Astrophysics</option><option value="Geophysics">Geophysics</option><option value="Plasma physics">Plasma physics</option><option value="Others">Others</option></select>
-          <div class="contribution-custom-domain" id="contribution-domain-other-field" hidden><label for="contribution-domain-other">Specify domain</label><input id="contribution-domain-other" name="domain_other" disabled aria-required="false" maxlength="200"></div>
+        <input type="hidden" name="_subject" value="EurekaBench contribution">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_url" value="https://eurekabench.github.io/contribute.html">
+        <input class="contribution-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="contribution-field"><label for="contribution-name">Your name <span class="required-marker" aria-hidden="true">*</span></label><input id="contribution-name" name="name" autocomplete="name" required aria-required="true" maxlength="120"></div>
+        <div class="contribution-field"><label for="contribution-email">Your email <span class="required-marker" aria-hidden="true">*</span></label><input id="contribution-email" name="email" type="email" autocomplete="email" required aria-required="true" maxlength="254"></div>
+        <div class="contribution-field"><label for="contribution-affiliation">Affiliation <span class="required-marker" aria-hidden="true">*</span></label><input id="contribution-affiliation" name="affiliation" autocomplete="organization" required aria-required="true" maxlength="200"></div>
+        <div class="contribution-field"><label for="contribution-webpage">Personal webpage <span class="required-marker" aria-hidden="true">*</span></label><input id="contribution-webpage" name="webpage" type="url" autocomplete="url" placeholder="https://" required aria-required="true" pattern="[Hh][Tt][Tt][Pp][Ss]?://.+" title="Enter a full http:// or https:// URL." maxlength="2000"></div>
+        <div class="contribution-field" id="contribution-title-field"><label for="contribution-title"><span id="contribution-title-label">Problem title</span> <span class="required-marker" aria-hidden="true">*</span></label><input id="contribution-title" name="title" required aria-required="true" maxlength="200"></div>
+        <div class="contribution-field" id="contribution-domain-field"><label for="contribution-domain">Domain <span class="required-marker" aria-hidden="true">*</span></label><select id="contribution-domain" name="domain" required aria-required="true"><option value="" disabled selected>Select a domain</option><option value="Neuroscience">Neuroscience</option><option value="Geophysics">Geophysics</option><option value="Plasma physics">Plasma physics</option><option value="Astrophysics">Astrophysics</option><option value="Computer science">Computer science</option><option value="Chemistry">Chemistry</option><option value="Others">Others</option></select>
+          <div class="contribution-custom-domain" id="contribution-domain-other-field" hidden><label for="contribution-domain-other">Specify domain <span class="required-marker" aria-hidden="true">*</span></label><input id="contribution-domain-other" name="domain_other" disabled aria-required="false" maxlength="200"></div>
         </div>
-        <div class="contribution-field" id="contribution-reference-field" hidden><label for="contribution-reference" id="contribution-reference-label">Existing problem ID</label><input id="contribution-reference" name="reference" disabled aria-required="false" aria-describedby="contribution-reference-help" maxlength="200"><p class="field-help" id="contribution-reference-help">Identify the EurekaBench problem that this insight addresses.</p></div>
-        <div class="contribution-field"><label for="contribution-evidence">Supporting links <span class="optional">(optional)</span></label><input id="contribution-evidence" name="evidence" type="text" aria-describedby="contribution-evidence-help" maxlength="2000"><p class="field-help" id="contribution-evidence-help">Papers, datasets, code, or experimental results.</p></div>
-        <div class="contribution-field contribution-field-wide"><label for="contribution-description" id="contribution-description-label">Describe the scientific problem</label><textarea id="contribution-description" name="description" rows="4" required aria-required="true" aria-describedby="contribution-description-help" maxlength="10000"></textarea><p class="field-help" id="contribution-description-help">Outline the question, available data or experiments, and how a solution could be evaluated.</p></div>
-        <div class="contribution-actions"><button type="submit" class="contribution-submit">Open email draft</button><button type="button" id="copy-contribution" class="contribution-copy">Copy draft</button><p>Draft addressed to <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p></div>
+        <div class="contribution-field contribution-field-wide" id="contribution-reference-field" hidden>
+          <label for="contribution-reference">Existing scientific discovery problem <span class="required-marker" aria-hidden="true">*</span></label>
+          <select id="contribution-reference" name="reference" disabled aria-required="false">
+            <option value="" disabled selected>Choose a scientific discovery problem</option>
+            <!-- Problem names follow the paper's Problems and sources table. -->
+            <optgroup label="Neuroscience">
+              <option value="Premotor states">Premotor states</option>
+              <option value="Zigzag foraging">Zigzag foraging</option>
+              <option value="Biological networks">Biological networks</option>
+              <option value="Neural dynamics">Neural dynamics</option>
+              <option value="Navigation strategies">Navigation strategies</option>
+              <option value="Phase memory">Phase memory</option>
+              <option value="Sensory integration">Sensory integration</option>
+              <option value="Visual predictive processing">Visual predictive processing</option>
+              <option value="Predictive processing of language">Predictive processing of language</option>
+              <option value="Neural representation">Neural representation</option>
+            </optgroup>
+            <optgroup label="Geophysics">
+              <option value="Ice shelf flow laws">Ice shelf flow laws</option>
+              <option value="Catchment properties">Catchment properties</option>
+            </optgroup>
+            <optgroup label="Plasma physics">
+              <option value="ARC tokamak">ARC tokamak</option>
+              <option value="Negative triangularity core-only">Negative triangularity core-only</option>
+              <option value="Negative triangularity edge">Negative triangularity edge</option>
+            </optgroup>
+            <optgroup label="Astrophysics">
+              <option value="Single galaxy">Single galaxy</option>
+              <option value="Galaxy environment">Galaxy environment</option>
+              <option value="Gravitational wave">Gravitational wave</option>
+              <option value="Milky Way">Milky Way</option>
+              <option value="Baryonic feedback">Baryonic feedback</option>
+              <option value="WDM merge tree">WDM merge tree</option>
+              <option value="WDM population">WDM population</option>
+            </optgroup>
+            <optgroup label="Computer science">
+              <option value="Stated belief shift">Stated belief shift</option>
+              <option value="Subliminal learning">Subliminal learning</option>
+              <option value="Circuit discovery">Circuit discovery</option>
+            </optgroup>
+            <optgroup label="Chemistry">
+              <option value="Reaction discovery">Reaction discovery</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="contribution-field contribution-field-wide"><label for="contribution-evidence">Supporting links <span class="optional">(optional)</span></label><input id="contribution-evidence" name="evidence" type="text" maxlength="2000"></div>
+        <div class="contribution-field contribution-field-wide"><label for="contribution-description"><span id="contribution-description-label">Scientific discovery problem</span> <span class="required-marker" aria-hidden="true">*</span></label><textarea id="contribution-description" name="description" rows="6" required aria-required="true" maxlength="10000"></textarea></div>
+        <div class="contribution-actions"><button type="submit" class="contribution-submit">Submit</button></div>
         <p id="contribution-status" class="contribution-status" role="status" aria-live="polite"></p>
-        <textarea id="contribution-draft" class="contribution-draft" readonly hidden aria-label="Contribution email draft" rows="8"></textarea>
       </form>
-      <noscript><p class="contribution-noscript">Email your problem or insight, with supporting evidence, to <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p><style>.contribution-form,.contribution-kinds,.contribution-direct-intro{display:none}</style></noscript>
+      <p class="contribution-review-note">We'll review the proposed scientific discovery problems and additional scientific insights and reply by email as soon as possible.</p>
+      <noscript><p class="contribution-noscript">Proposals are welcome by email at <a href="mailto:ogeng@cs.cmu.edu">ogeng@cs.cmu.edu</a>.</p><style>.contribution-form,.contribution-kinds,.contribution-direct-intro{display:none}#insight-guidance[hidden]{display:block!important}</style></noscript>
     </section>
   </main>
 

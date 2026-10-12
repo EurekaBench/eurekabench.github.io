@@ -194,33 +194,38 @@ details[open] > summary svg { transform: rotate(45deg); }
 .contribution-contact { margin-top: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
 .contribute-section .contribution-contact h2, .contribute-section .contribution-direct-title { font-size: 32px; }
 .contribution-contact p, .contribution-direct-intro { margin-top: 9px; font: 400 18px/1.6 var(--serif); color: #414b43; text-wrap: pretty; }
-.standalone-page .contribution-contact .contact-email { margin-top: 12px; }
+.contribution-contact p a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 .contribution-direct-title { margin-top: 25px; }
 .contribution-kinds { display: flex; gap: 26px; margin-top: 15px; border-bottom: 1px solid var(--line); }
 .contribution-kinds button { padding: 10px 0; background: transparent; font-size: 18px; line-height: 1.4; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .contribution-kinds button[aria-pressed="true"] { color: var(--green); border-bottom-color: var(--green); font-weight: 600; }
+.contribution-guide { padding: 22px; background: #f3f6f1; border-bottom: 1px solid var(--line); }
+.contribution-guide-intro { font: 400 18px/1.6 var(--serif); color: #414b43; text-wrap: pretty; }
+.contribution-guide-intro + .contribution-guide-intro { margin-top: 12px; }
+.contribution-review-note { margin-top: 22px; padding-top: 17px; border-top: 1px solid var(--line); color: #414b43; font: 400 17px/1.6 var(--serif); text-wrap: pretty; }
 .contribution-form { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 26px; margin-top: 21px; }
+.contribution-required-note { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+.required-marker { color: #b42318; font-weight: 700; }
+.contribution-honeypot { display: none; }
 .contribution-field { min-width: 0; }
 .contribution-custom-domain { margin-top: 12px; }
 .contribution-field label { display: block; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
 .optional { font-weight: 400; color: var(--muted); }
-.contribution-field input, .contribution-field select, .contribution-field textarea, .contribution-draft { display: block; width: 100%; min-height: 41px; border: 1px solid #cdd2c8; border-radius: 2px; padding: 9px 11px; background: var(--white); color: var(--ink); font: 400 15px/1.5 var(--sans); }
-.contribution-field textarea, .contribution-draft { resize: vertical; }
-.contribution-field input:focus-visible, .contribution-field select:focus-visible, .contribution-field textarea:focus-visible, .contribution-draft:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
-.contribution-field-wide, .contribution-actions, .contribution-status, .contribution-draft { grid-column: 1 / -1; }
+.contribution-field input, .contribution-field select, .contribution-field textarea { display: block; width: 100%; min-height: 41px; border: 1px solid #cdd2c8; border-radius: 2px; padding: 9px 11px; background: var(--white); color: var(--ink); font: 400 15px/1.5 var(--sans); }
+.contribution-field textarea { resize: vertical; }
+.contribution-field input:focus-visible, .contribution-field select:focus-visible, .contribution-field textarea:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.contribution-field-wide, .contribution-actions, .contribution-status { grid-column: 1 / -1; }
 .field-help { font-size: 12px; line-height: 1.5; margin-top: 6px; color: var(--muted); }
 .contribution-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.contribution-submit, .contribution-copy { min-height: 42px; border-radius: 2px; padding: 9px 15px; font-size: 14px; }
-.contribution-submit { color: var(--white); background: var(--green); }
-.contribution-submit:hover { background: #1e4a39; }
-.contribution-submit span { margin-left: 7px; }
-.contribution-copy { background: transparent; border: 1px solid #cdd2c8; }
-.contribution-copy:hover { background: var(--green-light); }
+.contribution-submit { min-height: 44px; border-radius: 2px; padding: 10px 18px; font-size: 16px; color: var(--white); background: var(--green); }
+.contribution-submit:hover:not(:disabled) { background: #1e4a39; }
+.contribution-submit:disabled { opacity: .65; cursor: default; }
 .contribution-actions p { color: var(--muted); font-size: 13px; margin-left: auto; }
 .contribution-actions a, .contribution-noscript a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-.contribution-status { font-size: 13px; color: var(--green); }
+.contribution-status { font-size: 15px; line-height: 1.5; color: var(--green); }
+.contribution-status[data-state="error"] { color: #b42318; }
+.contribution-status[data-state="pending"] { color: #805815; }
 .contribution-status:empty { display: none; }
-.contribution-draft { font: 13px/1.6 var(--mono); }
 
 .contact-email { display: inline-block; color: var(--green); font-size: 16px; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 .citation-paper { margin-top: 14px; font: 400 18px/1.5 var(--serif); }
@@ -349,6 +354,8 @@ details[open] > summary svg { transform: rotate(45deg); }
   .contribute-intro { font-size: 17px; }
   .contribution-kinds { gap: 20px; }
   .contribution-kinds button { font-size: 16px; text-align: left; }
+  .contribution-guide { padding: 20px 16px; }
+  .contribution-guide-intro { font-size: 17px; }
   .contribution-form { grid-template-columns: 1fr; gap: 16px; }
   .contribution-field input, .contribution-field select, .contribution-field textarea { font-size: 16px; }
   .contribution-actions p { margin-left: 0; flex-basis: 100%; }
